@@ -6,7 +6,7 @@ spring:
   main:
     banner-mode: off
   datasource:
-    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/${MYSQL_DATABASE:todo}
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/${MYSQL_DATABASE:todo}?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
     username: ${MYSQL_USERNAME:admin}
     password: ${MYSQL_PASSWORD:password}
     hikari:
