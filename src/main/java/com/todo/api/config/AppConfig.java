@@ -20,9 +20,6 @@ public class AppConfig {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    @Value("${MYSQL_URL}")
-    private String MYSQL_URL;
-
     @Bean
     public CommandLineRunner commandLineRunner() {
         return runner ->{

@@ -4,6 +4,7 @@ import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Contact;
 import io.swagger.v3.oas.annotations.info.Info;
 import io.swagger.v3.oas.annotations.info.License;
+import jakarta.annotation.PostConstruct;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -26,6 +27,16 @@ public class ApiApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ApiApplication.class, args);
+	}
+
+	@PostConstruct
+	public void checkEnv() {
+		System.out.println("🔍 ENV CHECK:");
+		System.out.println("MYSQL_HOST = " + System.getenv("MYSQL_HOST"));
+		System.out.println("MYSQL_PORT = " + System.getenv("MYSQL_PORT"));
+		System.out.println("MYSQL_DATABASE = " + System.getenv("MYSQL_DATABASE"));
+		System.out.println("MYSQL_USERNAME = " + System.getenv("MYSQL_USERNAME"));
+		System.out.println("MYSQL_PASSWORD = " + System.getenv("MYSQL_PASSWORD"));
 	}
 
 }
