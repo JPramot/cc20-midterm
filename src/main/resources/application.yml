@@ -6,9 +6,12 @@ spring:
   main:
     banner-mode: off
   datasource:
-    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/${MYSQL_DATABASE:todo}?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
-    username: ${MYSQL_USERNAME:admin}
-    password: ${MYSQL_PASSWORD:password}
+#    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/${MYSQL_DATABASE:todo}
+#    username: ${MYSQL_USERNAME:admin}
+#    password: ${MYSQL_PASSWORD:password}
+    url: jdbc:mysql://cc20-todoapplication.chq6e04ycye1.ap-southeast-2.rds.amazonaws.com:3306/todo
+    username: admin
+    password: cc20-midterm
     hikari:
       maximum-pool-size: 10
   jpa:
