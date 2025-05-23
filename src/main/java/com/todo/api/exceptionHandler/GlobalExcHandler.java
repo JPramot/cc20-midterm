@@ -53,7 +53,7 @@ public class GlobalExcHandler {
         String message;
         if (err.getCause() instanceof InvalidFormatException invalidExc) {
             if(!invalidExc.getPath().isEmpty()){
-            message = String.format("Invalid format of %s",invalidExc.getPath().getFirst().getFieldName());
+            message = String.format("Invalid format of %s",invalidExc.getPath().get(0).getFieldName());
             }else {
                 message = "Invalid format of data";
             }
