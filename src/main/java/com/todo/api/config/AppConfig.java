@@ -4,6 +4,7 @@ import com.todo.api.entity.User;
 import com.todo.api.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,10 +20,14 @@ public class AppConfig {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    @Value("${MYSQL_URL}")
+    private String MYSQL_URL;
+
     @Bean
     public CommandLineRunner commandLineRunner() {
         return runner ->{
             User existsUser = userRepository.findById(1L).orElse(null);
+            log.info("----------> run mysql url: {}", MYSQL_URL);
             if(existsUser == null) {
                 for(int i = 1; i <= 45; i++){
                     String username = "todo_user" + i;
